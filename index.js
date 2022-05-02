@@ -1,9 +1,17 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let checkedNumbers = {};
+  for (const number of array){
+    let complement = target - number;
+    if (checkedNumbers[complement]) return true;
+    checkedNumbers[number] = true;
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
